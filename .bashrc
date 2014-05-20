@@ -110,6 +110,34 @@ alias albumbler='python ~/scripts/albumbler.py'
 alias va='vlock -a'
 alias gdb='gdb -q'
 alias pdfcat='gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=output.pdf'
+alias cdcl='cd ~/Dropbox/classes/F2013/'
+alias feh='feh --action1 "gimp %f &"'
+alias st='~/.speedtest/speedtest-cli'
+alias xtm='~/git/extempore/extempore'
+alias xopen='xdg-open'
+alias imdone="espeak \"Hey. Hey there. Hey. I'm done.\" --stdout | aplay -q"
+alias sshpi="ssh pi@192.168.42.67"
+alias e="exit"
+
+function pjr() {
+
+    #echo $1
+    #echo $2
+    #echo $3
+    gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="$3" "$1" "$2" && rm "$1" "$2"
+}
+
+function pjr2() {
+    #$2 is the piece name
+    #$1 is the instrument name
+    FIRST="$2 | $1 1.pdf"
+    SECOND="$2 | $1 2.pdf"
+    OUT="$2 | $1.pdf"
+    #echo $FIRST
+    #echo $SECOND
+    #echo $OUT
+    gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="$OUT" "$FIRST" "$SECOND" && rm "$FIRST" "$SECOND"
+}
 #prompt magic
 #if [ $(id -u) -eq 0 ];
 #then # you are root, set red colour prompt
@@ -142,5 +170,8 @@ fi
 
 
 #path
-PATH=$PATH:/usr/local/src/RTcmix/bin
+PATH=$PATH:$HOME/.linuxbrew/bin:/usr/local/src/RTcmix/bin
 export PATH
+export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH:/usr/local/lib"
+JAVA_OPTS=$JAVA_OPTS:-Dorg.eclipse.swt.browser.DefaultType=mozilla
+export EXT_LLVM_DIR="$HOME/Downloads/llvm-3.2.src/build"
