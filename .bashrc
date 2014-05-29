@@ -119,6 +119,11 @@ alias imdone="espeak \"Hey. Hey there. Hey. I'm done.\" --stdout | aplay -q"
 alias sshpi="ssh pi@192.168.42.67"
 alias e="exit"
 
+function dic(){
+dict $1 | less
+}
+
+
 function pjr() {
 
     #echo $1
@@ -170,8 +175,8 @@ fi
 
 
 #path
-PATH=$PATH:$HOME/.linuxbrew/bin:/usr/local/src/RTcmix/bin
-export PATH
-export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH:/usr/local/lib"
-JAVA_OPTS=$JAVA_OPTS:-Dorg.eclipse.swt.browser.DefaultType=mozilla
-export EXT_LLVM_DIR="$HOME/Downloads/llvm-3.2.src/build"
+#PATH=$PATH:$HOME/.linuxbrew/bin:/usr/local/src/RTcmix/bin
+#export PATH
+#export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH:/usr/local/lib"
+JAVA_OPTS=$JAVA_OPTS:-Dorg.eclipse.swt.browser.DefaultType=mozilla #why?
+#export EXT_LLVM_DIR="$HOME/Downloads/llvm-3.2.src/build"
