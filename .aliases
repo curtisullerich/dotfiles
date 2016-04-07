@@ -1,0 +1,44 @@
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lh='ls -lh'
+
+#apt aliases
+alias install='sudo apt-get install'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias search='sudo aptitude search'
+
+# more aliases
+alias ..='cd ..'
+alias c=clear
+alias e='exit'
+alias ls='ls --color=auto'
+alias bc='bc -q'
+alias rancow='fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1)'
+alias gdb='gdb -q'
+alias pdfcat='gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=output.pdf'
+alias sblm='DISPLAY=:0 /opt/sublime_text/sublime_text'
+alias sbl='DISPLAY=:0 sbl'
+alias wat='if [ $? -eq 0 ]; then espeak success &> /dev/null ; else espeak failure &> /dev/null; fi'
+alias h='history'
+alias hgrep='history | grep '
+alias byobu='byobu-tmux'
+alias by='byobu'
+# alias pg='prodcertstatus --check_remaining_hours 12 || prodaccess'
+alias rebash='source ~/.bashrc'
+alias t='python ~/bin/t/t.py --task-dir ~/tasks --list tasks'
+alias fls='fileutil ls --sharded'
+alias fcp='fileutil cp'
+alias fmv='fileutil mv'
+alias pomo='timer 25 "Pomodoro" "Pomodoro started, you have 25 minutes left" "Pomodoro ended. Please stop the work and take short break"'
+alias rebaser='/google/data/ro/teams/rebaser/rebaser'
+alias gcam='git commit -a -m'
+alias clip='DISPLAY=:0 xclip -sel clip'
+alias l1='ls -1'
+
