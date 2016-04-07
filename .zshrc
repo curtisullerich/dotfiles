@@ -64,7 +64,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
 # antigen bundle ssh-agent
 # antigen theme robbyrussell
-antigen theme /usr/local/google/home/ccu/zsh-files themes/ccu --no-local-clone
+# expected to be in ~/zsh-files/themes/ccu.zsh-theme
+antigen theme ~/zsh-files themes/ccu --no-local-clone
 antigen apply
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
