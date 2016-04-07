@@ -41,4 +41,3 @@ alias rebaser='/google/data/ro/teams/rebaser/rebaser'
 alias gcam='git commit -a -m'
 alias clip='DISPLAY=:0 xclip -sel clip'
 alias l1='ls -1'
-
