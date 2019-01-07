@@ -1,6 +1,3 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/usr/local/google/home/ccu/.oh-my-zsh
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -60,7 +57,9 @@ source ~/.antigen.zsh
 antigen bundle robbyrussell/oh-my-zsh lib/
 antigen bundle git
 antigen bundle tmuxinator
+# Commented this on 2018-04-09 because I think it's causing pastes to take forever. See https://github.com/zsh-users/zsh-syntax-highlighting/issues/295.
 antigen bundle zsh-users/zsh-syntax-highlighting
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
 antigen bundle rupa/z
 # antigen bundle ssh-agent
 # antigen theme robbyrussell
@@ -99,11 +98,13 @@ alias rzsh="source ~/.zshrc"
 alias ezsh="vim ~/.zshrc"
 bindkey '^[OA' history-beginning-search-backward
 bindkey '^[OB' history-beginning-search-forward
-setopt append_history no_inc_append_history no_share_history
+setopt append_history no_inc_append_history share_history nonomatch
 
 # open the last URL visible in the current pane in Chrome.
 alias lasturl='export DISLAY=:0.0 && tmux capture-pane && tmux show-buffer | tr "\n" " " | egrep -o "https?://[^ ]+" | tail -n1'
 alias lu=lasturl
-alias oic='export DISPLAY=:0.0 ; google-chrome $(lasturl) > /dev/null'
-alias v=vim
+alias oic='export DISPLAY=:0.0 ; google-chrome $(lasturl) &> /dev/null'
 
+if [ -f ~/.zshrc.google ]; then
+  source ~/.zshrc.google
+fi
