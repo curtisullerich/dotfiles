@@ -1,4 +1,5 @@
 # Add an "alert" alias for long running commands.  Use like so:
+
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
@@ -29,15 +30,28 @@ alias wat='if [ $? -eq 0 ]; then espeak success &> /dev/null ; else espeak failu
 alias h='history'
 alias hgrep='history | grep '
 alias byobu='byobu-tmux'
-alias by='byobu'
-# alias pg='prodcertstatus --check_remaining_hours 12 || prodaccess'
+alias by='byobu attach-session'
+alias p='prodcertstatus --check_remaining_hours 12 || prodaccess'
 alias rebash='source ~/.bashrc'
 alias t='python ~/bin/t/t.py --task-dir ~/tasks --list tasks'
 alias fls='fileutil ls --sharded'
 alias fcp='fileutil cp'
 alias fmv='fileutil mv'
 alias pomo='timer 25 "Pomodoro" "Pomodoro started, you have 25 minutes left" "Pomodoro ended. Please stop the work and take short break"'
-alias rebaser='/google/data/ro/teams/rebaser/rebaser'
 alias gcam='git commit -a -m'
+alias gca='git commit -a'
+alias gam='git add -A && git commit --amend'
 alias clip='DISPLAY=:0 xclip -sel clip'
 alias l1='ls -1'
+alias amend='git add -u && git commit --amend'
+alias vdot='v ~/.bashrc* ~/.aliases* ~/.zshrc* ~/.vimrc*'
+alias v=vim
+
+# option PUSH_MINUS will affect the + vs - in this alias.
+# alias zc='gcd && z -c && popd -1 &> /dev/null'
+alias ph='pushd'
+alias pp='popd'
+alias dirs='dirs -p'
+#alias pushd='pushd -q ; dirs'
+#alias popd='popd -q ; dirs'
+alias zc='z -c'
