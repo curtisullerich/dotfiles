@@ -5,23 +5,39 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
-
-Bundle 'tpope/vim-surround'
-Bundle 'gcmt/breeze.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'bling/vim-airline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'gmarik/vundle'
+" Install Vundle (clone the git repo to ~/.vim/bundle/vundle), open vim, run :PluginInstall
+Plugin 'tpope/vim-surround'
+Plugin 'gcmt/breeze.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/lh-brackets'
 
 " Color Themes
-Bundle 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 colorscheme monokai
 " colorscheme earth
-Plugin 'vim-scripts/Conque-GDB'
+" Plugin 'vim-scripts/Conque-GDB' disabled 2018-02-20 because this took 1s on vim startup
 Plugin 'tpope/vim-abolish'
+Plugin 'vim-scripts/ConvertBase.vim'
+Plugin 'sheerun/vim-polyglot'  " syntax highlighting for many languages.
+Plugin 'jeetsukumaran/vim-indentwise'
+Plugin 'Raimondi/delimitMate'
+
+" Translate the character under the cursor to a decimal value:
+nmap <M-a>d i<C-R>=char2nr(getline(line("."))[col(".") - 1])<CR><ESC>lx
+" ... hexadecimal value:
+nmap <M-a>h ix<C-R>=ConvertToBase(char2nr(getline(line("."))[col(".") - 1]),16)<CR><ESC>lx
+" ... octal value:
+nmap <M-a>o i<C-R>=ConvertToBase(char2nr(getline(line("."))[col(".") - 1]),8)<CR><ESC>lx
+
+nmap <c-j> Jdf/dl
+
 
 """"""""
 if has('autocmd')
@@ -113,6 +129,7 @@ let g:did_UltiSnips_vim_after = 1
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#disable_rtp_load = 1 " to speed up startup
 
 "
 " Basic shortcuts definitions
@@ -140,7 +157,7 @@ inoremap <C-z>  <Esc>:undo<CR>
 nnoremap <C-y>  :redo<CR>
 inoremap <C-y>  <Esc>:redo<CR>
 " Tabs
-let g:airline_theme='badwolf'
+" let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
 nnoremap <C-b>  :tabprevious<CR>
 inoremap <C-b>  <Esc>:tabprevious<CR>i
@@ -162,12 +179,10 @@ noremap gB :bp<CR>
 map \ :
 
 let mapleader = ','
-nnoremap <Leader>p :set paste<CR>
-nnoremap <Leader>o :set nopaste<CR>
+" nnoremap <Leader>p :set paste<CR>
+" nnoremap <Leader>o :set nopaste<CR>
 noremap  <Leader>g :GitGutterToggle<CR>
 
-
-set paste
 " From vimrc.bak
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -221,3 +236,7 @@ hi Search ctermbg=LightBlue
 if filereadable(expand("~/.vimrc.google"))
   source ~/.vimrc.google
 endif
+
+set paste
+set tabstop=2
+set autoindent
