@@ -14,9 +14,10 @@ HISTCONTROL=ignoreboth
 # setopt histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000000
-HISTFILESIZE=20000000
-SAVEHIST=10000000
+HISTSIZE=100000000
+HISTFILESIZE=200000000
+SAVEHIST=100000000
+
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -147,8 +148,6 @@ al(){
 }
 
 export EDITOR="vim"
-alias pushd='set_magic_path pushd' 
-alias popd='set_magic_path popd' 
 
 function last_was_blank {
   local last_command="$(history 1)"
