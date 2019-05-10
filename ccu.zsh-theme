@@ -20,14 +20,14 @@ esac
 
 user_display="$USER@"
 case $USER in
-  "ccu")
+  "curtis")
     user_display=""
     ;;
 esac
 
 host_display="$HOST"
 case $HOST in
-  "curtis.mtv.corp.google.com")
+  "filbert")
     host_display="" # used to be Δ
     ;;
   "ccu-glaptop")
@@ -37,7 +37,7 @@ esac
 
 #descriptive=" $user_display$host_display$myshell "
 descriptive=" $user_display$host_display "
-if [ "$descriptive" -eq "  " ]; then
+if [ "$descriptive" = "  " ]; then
   descriptive=" "
 fi
 
