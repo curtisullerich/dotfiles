@@ -7,8 +7,7 @@ antigen bundle tmuxinator
 antigen bundle zsh-users/zsh-syntax-highlighting
 #ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
 antigen bundle rupa/z
-# expected to be in ~/zsh-files/themes/ccu.zsh-theme
-antigen theme ~/zsh-files themes/ccu --no-local-clone
+antigen theme curtisullerich/dotfiles ccu
 antigen apply
 
 autoload bashcompinit
