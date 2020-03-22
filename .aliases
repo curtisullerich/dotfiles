@@ -10,9 +10,9 @@ alias l='ls -CF'
 alias lh='ls -lh'
 
 #apt aliases
-alias install='sudo apt-get install'
-alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade'
+alias install='sudo apt install'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
 alias search='sudo aptitude search'
 
 # more aliases
@@ -55,3 +55,7 @@ alias dirs='dirs -p'
 #alias pushd='pushd -q ; dirs'
 #alias popd='popd -q ; dirs'
 alias zc='z -c'
+
+# open the last URL visible in the current pane in Chrome.
+alias lasturl='export DISLAY=:0.0 && tmux capture-pane -J && tmux show-buffer | egrep -o "https?://[^ ]+" | tail -n1'
+alias oic='export DISPLAY=:0.0 ; google-chrome $(lu) &> /dev/null'
