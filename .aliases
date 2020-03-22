@@ -41,11 +41,14 @@ alias pomo='timer 25 "Pomodoro" "Pomodoro started, you have 25 minutes left" "Po
 alias gcam='git commit -a -m'
 alias gca='git commit -a'
 alias gam='git add -A && git commit --amend'
-alias clip='DISPLAY=:0 xclip -sel clip'
+#alias clip='DISPLAY=:0 xclip -sel clip'
+alias clip='xclip -sel clip'
 alias l1='ls -1'
 alias amend='git add -u && git commit --amend'
+#alias feh='feh --action1 "gimp %f &"'
 alias vdot='v ~/.bashrc* ~/.aliases* ~/.zshrc* ~/.vimrc*'
 alias v=vim
+alias fix-webcam='sudo mv /dev/video0 /dev/video0.original && sudo ln -s /dev/video2 /dev/video0'
 
 # option PUSH_MINUS will affect the + vs - in this alias.
 # alias zc='gcd && z -c && popd -1 &> /dev/null'
