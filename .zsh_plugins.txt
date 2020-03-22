@@ -1,0 +1,10 @@
+robbyrussell/oh-my-zsh path:lib
+# Commented this on 2018-04-09 because I think it's causing pastes to take forever. See https://github.com/zsh-users/zsh-syntax-highlighting/issues/295.
+# On 2019-05-10 everything seems to be fine, though the ZSH_HIGHLIGHT_STYLES update doesn't work after updating antigen.
+zsh-users/zsh-syntax-highlighting
+# zdharma/fast-syntax-highlighting may be an alternative worth trying
+zsh-users/zsh-autosuggestions
+
+#ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
+rupa/z
+andrieiev/zsh-themes path:themes/lazyuser.zsh-theme
